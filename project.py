@@ -1968,7 +1968,7 @@ class Project(object):
     # The output will look like (NB: tabs are separators):
     # ref: refs/heads/master	HEAD
     # 5f6803b100bb3cd0f534e96e88c91373e8ed1c44	HEAD
-    output = self.bare_git.ls_remote('-q', ' ', '--exit-code', name, 'HEAD')
+    output = self.bare_git.ls_remote('-q', '-q', '--exit-code', name, 'HEAD')
 
     for line in output.splitlines():
       lhs, rhs = line.split('\t', 1)
